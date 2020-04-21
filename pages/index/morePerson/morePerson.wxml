@@ -1,0 +1,24 @@
+<view class="container">
+  <block wx:key="index" wx:for="{{lists}}" wx:for-item="list">
+    <view class="row {{index==lists.length-1?'noline':''}}" bindtap="personDetail" data-url="../personDetailNew/personDetailNew?personId={{list.id}}">
+      <view class="left">
+        <image class="img-view" src="{{list.gd_image}}" mode="aspectFill"></image>
+        <view class="inter-view">
+          <view class="mid-top">{{list.name}}</view>
+          <view class="mid-bottom">{{list.title}}</view>
+        </view>
+      </view>
+      <view class="right">
+        <button formType="submit">进入</button>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class="dbts" hidden="{{isShow}}">
+  <view class="inner-bg">
+    <view class="xt-left"></view>
+    <view class="tswz">没有更多啦</view>
+    <view class="xt-right"></view>
+  </view>
+</view>

@@ -1,0 +1,63 @@
+<view class="title">个人信息</view>
+<view id="info">
+  <view class='row' bindtap="uploadCard" data-statu="userImg">
+    <text>头像</text>
+    <view class="rig">
+      <image class="user-img" src="{{users_image}}"></image>
+      <view class='arrow'></view>
+    </view>
+  </view>
+  <view class="line"></view>
+  <view class="row">
+    <text>性别</text>
+    <view class="rig">
+      <view class="pub color{{sex==1?'green':'grey'}}" bindtap='chooseSexM'>
+        <image src="/images/male.png"></image>
+        <text>男</text>
+      </view>
+      <view class="pub color{{sex==2?'green':'grey'}}" bindtap='chooseSexF'>
+        <image src="/images/female.png"></image>
+        <text>女</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="title">身份证上传</view>
+<view id="card-box">
+  <view class="card">
+    <view class="out" bindtap="uploadCard" data-statu="face">
+      <image class="back" src="{{cardface}}"></image>
+      <image class="camera" src="{{camera1}}"></image>
+    </view>
+    <view class="out" bindtap='uploadCard' data-statu="back">
+      <image class="back" src="{{cardback}}"></image>
+      <image class="camera" src="{{camera2}}"></image>
+    </view>
+  </view>
+  <view class="hint">
+    <text>上传身份证人像面</text>
+    <text>上传身份证国徽面</text>
+  </view>
+  <view class="foot">
+    <view class="item">
+      <text>真实姓名</text>
+      <input class="inp" type="text" cursor-spacing="90" focus="{{focus1}}" value="{{realName}}" bindinput="handleName"/>
+    </view>
+    <view class="xian"></view>
+    <view class="item">
+      <text>身份证号</text>
+      <input class="inp" type="idcard" cursor-spacing="180" focus="{{focus2}}" value="{{cardId}}" maxlength='18' bindinput="handleCardID"/>
+    </view>
+  </view>
+</view>
+
+<view class="after">
+  <view class="button" bindtap='confirm'>提交认证</view>
+  <view class="prom">以上信息仅用于身份认证</view>
+</view>
+
+
+
+
+  

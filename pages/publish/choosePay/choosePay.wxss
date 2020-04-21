@@ -1,0 +1,145 @@
+page{
+  background: whitesmoke;
+}
+.all{
+  padding: 0 46rpx;
+  padding-top: 66rpx;
+}
+.all .row1{
+  text-align: center;
+}
+.all .row1 text{
+  display: inline-block;
+}
+.all .row1 .symbol{
+  height:65rpx;
+  font-size:46rpx;
+  font-family:PingFangSC-Medium;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  line-height:65rpx;
+}
+.all .row1 .price{
+  height:98rpx;
+  font-size:70rpx;
+  font-family:PingFangSC-Semibold;
+  font-weight:600;
+  color:rgba(51,51,51,1);
+  line-height:98rpx;
+  margin-left: 20rpx;
+}
+.all .title{
+  width:364rpx;
+  height:40rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height:40rpx;
+  margin: 0 auto;
+  margin-top: 26rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+  text-align: center;
+}
+
+.all .row2{
+  margin-top: 56rpx;
+}
+.all .row2 .radio-group{
+  display: flex;
+  flex-direction: column;
+}
+.all .row2 .radio-group .wx-radio-input{
+  position: absolute;
+  right: 40rpx;
+}
+.all .row2 .radio-group .group-item{
+  padding: 36rpx 0;
+  border-bottom: 1rpx solid #EDEDED;
+  
+}
+.all .row2 .radio-group .group-item .img1{
+  display: inline-block;
+  width: 54rpx;
+  height: 42rpx;
+  vertical-align: middle;
+}
+.all .row2 .radio-group .group-item .cls{
+  display: inline-block;
+  margin-left: 30rpx;
+  height:48rpx;
+  font-size:34rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:48rpx;
+  vertical-align: middle;
+}
+.all .row2 .radio-group .group-item .img2{
+  display: inline-block;
+  width: 42rpx;
+  height: 42rpx;
+  margin-right: 7rpx;
+  vertical-align: middle;
+}
+
+
+.all .row3{
+  margin-top:126rpx;
+}
+.all .row3 button{
+  width:560rpx;
+  height:90rpx;
+  line-height: 90rpx;
+  background:rgba(145,213,173,1);
+  border-radius:45rpx;
+  font-size:32rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+}
+.all .row3 button::after{
+  border: none;
+}
+
+/* 弹窗布局 */
+.zan-dialog__mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0); /* 设置阴影半透明背景如： background: rgba(0, 0, 0, 0.4) */
+  display: none;
+}
+
+.zan-dialog__container {
+  position: fixed;
+  bottom: 400rpx;
+  /* 弹窗布局宽 */
+  width: 650rpx; 
+  /*弹窗布局高，与下面弹出距离transform有关 */
+  height: 350rpx;
+  margin-left: 50rpx;
+  background: #f8f8f8;
+  /*弹框弹出距离，与弹框布局高度有关，如300%表示弹起距离为3倍弹窗高度 */
+  transform: translateY(300%);
+  transition: all 0.4s ease;
+  z-index: 12;
+  border-radius: 20rpx;
+  /* 弹框的悬浮阴影效果，如不需要可注释该行 */
+  box-shadow: 0px 3px 3px 2px gainsboro;
+}
+
+.zan-dialog--show .zan-dialog__container {
+  transform: translateY(0);
+}
+
+.zan-dialog--show .zan-dialog__mask {
+  display: block;
+}
+
+

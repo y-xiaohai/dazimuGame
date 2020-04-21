@@ -1,0 +1,16 @@
+<!--pages/publish/defaultImg.wxml-->
+<view class="default">
+  <checkbox-group bindchange="checkboxChange" class="pic-box">
+    <label wx:for-index="idx" wx:key="id" wx:for="{{defa_list}}" wx:for-item="defa_list">
+      <view class="pic-item">
+        <image src="{{defa_list.url}}"></image>
+        <checkbox class="xzyc"  value='{{defa_list.url}}' checked="{{checked}}"></checkbox> 
+      </view>
+    </label>
+  </checkbox-group>
+
+  <view class="qran">
+    <button formType="submit" bindtap='confadd'>确认添加</button>
+  </view>
+
+</view>

@@ -1,0 +1,40 @@
+<view id="list">
+  <view class='row1' bindtap="chooseNum" >
+    <text>手机号</text>
+    <input class='info-input' type="number" bindinput="handleLoginPhone" focus="{{focus}}" maxlength='11' value='' placeholder='请输入被邀人的手机号' placeholder-class='ph'/>
+  </view>
+  <view class='row2'>
+    <text>分区</text>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <radio class="radio" wx:for-items="{{items}}" wx:key="name" value="{{item.value}}" checked="{{item.checked}}">
+        <text>{{item.name}}</text>
+      </radio>
+    </radio-group>
+  </view>
+  
+  <view class="tswza">注：被邀人需要实名认证后才可以被邀约哦~</view>
+</view>
+
+<view class='btnview'>
+  <button class="{{color?'green':''}}" disabled="{{disabled}}" bindtap='setChild'>确定</button>
+</view>
+
+<view class="tswzb">
+  <view>邀约的伙伴会跟您的信誉积分有关联哦！</view>
+  <view>请保证您邀约的伙伴是值得信任的！</view>
+</view>
+
+<!-- 弹窗 -->
+<view class="dialog {{showDialog1?'dialog-show':''}}">
+  <view class="mask"/>
+  <view class="container" style="background-image: url('http://apppic.zomin.cn/FqdoaVqgsprOFAcfoxN3WgIZCPFW'); background-size:cover">
+    <view class="prop">
+      <image src="/images/icon1.png" catchtap='close'></image>
+      <view class="wenzi1">
+        <view>{{text1}}</view>
+        <view>{{text2}}</view>
+        <view>{{text3}}</view>
+      </view>
+    </view>
+  </view>
+</view>

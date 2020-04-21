@@ -1,0 +1,61 @@
+<view class='search-box'>
+  <view class="inp">
+    <image src="/images/search.png"></image>
+    <input placeholder='请输入用户真实姓名' placeholder-style='color: #999;' bindinput='handleinput' focus='{{true}}'></input>
+  </view>
+  <view class="search" bindtap='search'>搜索</view>
+</view>
+<view class="line"></view>
+
+<view class="lists" wx:for="{{searchList}}" wx:key="index" wx:for-item="search">
+  <view class="lists-out">
+    <view class="top-row">
+      <image class="par-img" src="{{search.users_image}}"></image>
+      <view class="par-name">{{search.login_name}}</view>
+      <view class="par-score">
+        <text>团队人数：</text>
+        <text class="othercolor">{{search.groupNum}}</text>
+        <!-- <text>分</text> -->
+      </view>
+      <view class="par-level">
+        <image class="parlevel-img" src="http://levelpic.zomin.cn/{{search.level}}.png"></image>
+        <view wx:if="{{search.level == 1}}" class="parlevel-name color1">{{search.levelRemark}}</view>
+        <view wx:if="{{search.level == 2}}" class="parlevel-name color2">{{search.levelRemark}}</view>
+        <view wx:if="{{search.level == 3}}" class="parlevel-name color3">{{search.levelRemark}}</view>
+        <view wx:if="{{search.level == 4}}" class="parlevel-name color4">{{search.levelRemark}}</view>
+        <view wx:if="{{search.level == 5}}" class="parlevel-name color5">{{search.levelRemark}}</view>
+        <view wx:if="{{search.level == 6}}" class="parlevel-name color6">{{search.levelRemark}}</view>
+        <view wx:if="{{search.level == 7}}" class="parlevel-name color7">{{search.levelRemark}}</view>
+        <view wx:if="{{search.level == 8}}" class="parlevel-name color8">{{search.levelRemark}}</view>
+      </view>
+    </view>
+    <view class="bottom-row">
+      <view class="put">
+        <text>发布/服务订单(次)：</text>
+        <text class="pec">{{search.putNum}}</text>
+        <text class="pec">/</text>
+        <text class="pec">{{search.getNum}}</text>
+      </view>
+      <view class="get">
+        <text>信誉积分：</text>
+        <text class="pec">6</text>
+        <!-- <text>次</text> -->
+      </view>
+    </view>
+  </view>
+  <view class="more" data-getnum="{{search.getNum}}" data-level="{{search.level}}" data-remark="{{search.levelRemark}}" data-name="{{search.login_name}}" data-putnum="{{search.putNum}}" data-useid="{{search.users_id}}" data-uimage="{{search.users_image}}" catchtap='toPartnerDetail'>查看团队数据</view>
+</view>
+
+<view class="not" wx:if="{{searchList.length == 0}}">
+    <image src="/images/search2.png"></image>
+    <view class="wenzi">在您的伙伴中无此人数据</view>
+    <view class="wenzi">请确认真实姓名重新输入</view>
+  </view>
+
+<view class="dbts" wx:if="{{searchList.length > 0}}">
+  <view class="inner-bg">
+    <view class="xt-left"></view>
+    <view class="tswz">没有更多啦</view>
+    <view class="xt-right"></view>
+  </view>
+</view>

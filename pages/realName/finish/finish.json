@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "认证完成",
+  "backgroundColor": "#f0f0f0",
+  "enablePullDownRefresh": false,
+  "disableScroll": true,
+  "usingComponents": {}
+}

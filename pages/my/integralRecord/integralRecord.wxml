@@ -1,0 +1,9 @@
+<view class="wai">
+  <view class="list">
+    <view class="zuo">
+      <view class="type">获得积分</view>
+      <view class="time">{{zctime}}</view>
+    </view>
+    <view class="you">6</view>
+  </view>
+</view>

@@ -1,0 +1,58 @@
+<view class="head">
+  <swiper indicator-dots="{{images.length>1?true:false}}" indicator-color="#ffffff" indicator-active-color="#91D5AD" autoplay="true" circular="true">
+    <swiper-item wx:key="id" wx:for="{{images}}" wx:for-item="image">
+      <image mode="aspectFill" src="{{image}}" data-ur="{{image}}" catchtap='previewImg'></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+<view class='midd'>
+  <view class="pub title">{{title}}{{ddsl}}</view>
+  <view class="pub content">需求详情： {{content}}</view>
+  <view class="pub price">￥{{price}}</view>
+  <view class="pub prompt">* 涉及物品采购的，务必与发布方确认是否已包含物品采购的价格且是否包含配送费请沟通清楚后再接单</view>
+</view>
+
+<view class="fgx"></view>
+
+<view class="foot">
+  <view class="foot-top">
+    <image class="ico" src="/images/sj.png"></image>
+    <view class="gong time">{{business_start_time}}</view>
+  </view>
+  <view class="foot-bot">
+    <view class="left">
+      <image class="ico" style="width:26rpx;padding:0 2rpx;" src="/images/dw.png"></image>
+      <view class="address">{{address}}</view>
+    </view>
+    <view class="gong distance">距您{{distance}}</view>
+  </view>
+</view>
+
+<view class="complaint">
+    <view class="tsdd" bindtap='complaint'>投诉订单</view> 
+</view>
+
+<view class="after">
+  <form bindsubmit="getOrder" report-submit="true">
+    <button class="conf" formType="submit">确认接单</button>
+  </form>
+</view>
+
+
+<!-- 弹窗 -->
+<view class="dialog" wx:if="{{showDialog}}">
+  <!-- 遮罩层view-->
+  <view class="mask {{showDialog?'mask2':''}}" catchtouchmove="preventTouchMove"></view>
+  <view class="container" style="background-image: url('http://apppic.zomin.cn/FqdoaVqgsprOFAcfoxN3WgIZCPFW'); background-size:cover">
+    <view class="prop">
+      <image src="/images/icon1.png" catchtap='close'></image>
+      <view class='coarse'>您还未登录</view>
+      <view class='thin'>请先登录在进行操作哦</view>
+      <view class="prop-button">
+        <view class="ok" bindtap="onConfirm" data-status="confirm">立即登录</view>
+        <view class="no" bindtap="onCancel" data-status="cancel">暂不登录</view>
+      </view>
+    </view>
+  </view>
+</view>

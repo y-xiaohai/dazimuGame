@@ -1,0 +1,13 @@
+<view class="wall">
+  <input type='number' placeholder="请输入手机号" maxlength='11' placeholder-class='ph' bindinput='inputPhone' value="{{phone}}"></input>
+
+  <view class="row-box">
+    <input class="left-input" type='number' placeholder="请输入验证码" placeholder-class='ph' maxlength='4' bindinput='inputCode'></input>
+
+    <button class="right-button {{color1?'green':''}}" disabled="{{disable1}}" bindtap='sendVerifCode'>{{clues}}</button>
+  </view>
+
+  <view class="button-box">
+    <button class="{{color2?'green':''}}" formType="submit" disabled="{{disable2}}" bindtap='confReg'>登录</button>
+  </view>
+</view>

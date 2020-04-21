@@ -1,0 +1,43 @@
+<view class="list">
+
+  <view class="row" bindtap="getFocusA">
+    <view class="tit">联系人：</view>
+    <input class="other" placeholder='请填写需求方姓名' focus='{{focusA}}' placeholder-class='ph' maxlength='8' bindinput='inputName' value="{{linkname}}"></input>
+  </view>
+
+  <view class="row">
+    <view class="tit">性别：</view>
+    <view class="rig">
+      <view class="pub color{{sex==1?'green':'grey'}}" bindtap='chooseSexM'>
+        <image src="/images/male.png"></image>
+        <text>男</text>
+      </view>
+      <view class="pub color{{sex==2?'green':'grey'}}" bindtap='chooseSexF'>
+        <image src="/images/female.png"></image>
+        <text>女</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="row" bindtap="getFocusB">
+    <view class="tit">手机号：</view>
+    <input type="number" class="other" placeholder='请填写手机号码' focus="{{focusB}}" placeholder-class='ph' maxlength='11' bindinput='inputPhone' value="{{linkphone}}"></input>
+  </view>
+  
+  <navigator class="row special" url="/pages/address/searchAddress/searchAddress" hover-class='none'>
+    <view class="spe-left">
+      <view class="tit">服务地址：</view>
+      <image class="icon1" src="/images/dw.png"></image>
+      <input class="other2" placeholder='点击选择地址' placeholder-class='ph' disabled='{{true}}' value="{{name}}"></input>
+    </view>
+    <image class="icon2" src="/images/jt.png"></image>
+  </navigator>
+
+  <view class="row" bindtap="getFocusC">
+    <view class="tit">详细地址：</view>
+    <input class="other3" placeholder='例：6号楼8层808室' focus="{{focusC}}" placeholder-class='ph' maxlength='50' bindinput='inputDetail' value='{{linkdetail}}'></input>
+  </view>
+
+</view>
+
+<button class="button" data-code="{{citycode}}" data-name="{{name}}" data-address="{{address}}" data-lon="{{hx_lon}}" data-lat="{{hx_lat}}" bindtap='saveAddress'><text>保存地址</text></button>

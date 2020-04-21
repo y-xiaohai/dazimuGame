@@ -1,0 +1,132 @@
+<view class="userinfo" style="background: url('http://apppic.zomin.cn/FoIkCJZUorIX5uVg9NGi9b03w2sg') no-repeat;background-size:100%">
+  <view class="top" catchtap='editor'>
+    <view class="left-piece">
+      <image class="user-avatar" src="{{users_image}}"></image>
+      <image class="level_image" src="{{levelpic}}"></image>
+    </view>
+    
+    <view class="middle-piece">
+      <block wx:if="{{isfail}}">
+        <view class="userinfo-nickname">{{is_server==1?nickname:visitor}}</view>
+        <view class="userinfo-bottom">
+          <text>{{process_phone}}</text>
+          <text class="isrz">{{is_server == 1?'已认证':'未认证'}}</text>
+        </view>
+      </block>
+      <block wx:else>
+        <view style='color:#000;font-size:42rpx;'>登录/注册</view>
+      </block>
+    </view>
+    
+    <view class="right-piece">
+      <image src="/images/topjt.png"></image>
+    </view>
+  </view>
+  
+  <view class="bottom">
+    <view class="left">左区：<text>{{point.left}}</text></view>
+    <view class="xian"></view>
+    <view class="right">右区：<text>{{point.right}}</text></view>
+  </view>
+</view>
+
+<view class="big">
+  <view class="person-list">
+    <view class="list-item unline" catchtap='toWallet'>
+      <view class="item-le">
+        <image class="item-image" mode='aspectFit' src="/images/wdqb.png"></image>
+        <text class="item-text">我的钱包</text>
+      </view>
+      <view class="wallet">{{wallet}}</view>
+      <view class='arrow'></view> 
+    </view>
+    <view class="list-item unline" catchtap='toFriend'>
+      <view class="item-le">
+        <image class="item-image spec" mode='aspectFit' src="/images/wdhb.png"></image>
+        <text class="item-text">我的伙伴</text>
+      </view>
+      <view class="wallet"></view>
+      <view class='arrow'></view> 
+    </view>  
+    <view class="list-item" catchtap='toRealName'>
+      <view class="item-le">
+        <image class="item-image" mode='aspectFit' src="/images/cwbm.png"></image>
+        <text class="item-text">帮忙用户认证</text>
+      </view>
+      <text wx:if="{{is_server == 1}}" class="isPass">已通过</text>
+      <text class='arrow'></text>
+    </view>
+  </view>
+  <view class="fgx"></view>
+
+  <view class="person-list quyj">
+    <view class="list-item unline" catchtap='toAddress'>
+      <view class="item-le">
+        <image class="item-image addre" mode='aspectFit' src="/images/fwdz.png"></image>
+        <text class="item-text" style='margin-left: 22rpx;'>服务地址管理</text>
+      </view>
+      <text class='arrow'></text>
+    </view>
+    <view class="list-item unline" catchtap='toBusinessStatus'>
+      <view class="item-le">
+        <image class="item-image" mode='aspectFit' src="/images/yyzt.png"></image>
+        <text class="item-text">运营状态</text>
+      </view>
+      <view class="wallet"></view>
+      <view class='arrow'></view> 
+    </view>  
+    <view class="list-item" catchtap='toYaoqing'>
+      <view class="item-le">
+        <image class="item-image spec" mode='aspectFit' src="/images/yyhb.png"></image>
+        <text class="item-text">邀约小伙伴</text>
+      </view>
+      <view class='arrow'></view> 
+    </view>
+  </view>
+  <view class="fgx"></view>
+  <view class="person-list quyj">
+    <view class="list-item unline" catchtap=''>
+      <view class="item-le">
+        <image class="item-image" mode='aspectFit' src="/images/lxkf.png"></image>
+        <!-- <text class="item-text">联系客服</text> -->
+        <button class="item-text" plain='{{true}}' open-type='contact' style="width: 570rpx;border: none;padding-left: 0; text-align: left;">联系客服</button>
+      </view>
+      <view class='arrow'></view> 
+    </view>
+
+    <navigator class="list-item unline" url="/pages/my/agreements/agreements" hover-class="none">
+      <view class="item-le">
+        <image class="item-image" mode='aspectFit' src="/images/xyysm.png"></image>
+        <text class="item-text">协议与说明</text>
+      </view>
+      <text class='arrow'></text>
+    </navigator>
+
+    <navigator class="list-item" url="/pages/my/aboutUs/aboutUs" hover-class="none">
+      <view class="item-le">
+        <image class="item-image" mode='aspectFit' src="/images/gybm.png"></image>
+        <text class="item-text">关于帮忙</text>
+      </view>
+      <text class='arrow'></text>
+    </navigator>
+  </view>
+</view>
+
+<view style='height: 50rpx;background: #F4F4F4;'></view>
+
+<!-- 弹窗 -->
+<view class="dialog" wx:if="{{showDialog}}">
+  <!-- 遮罩层view-->
+  <view class="mask {{showDialog?'mask2':''}}" catchtouchmove="preventTouchMove"></view>
+  <view class="container" style="background-image: url('http://apppic.zomin.cn/FqdoaVqgsprOFAcfoxN3WgIZCPFW'); background-size:cover" catchtouchmove="preventTouchMove">
+    <view class="prop">
+      <image src="/images/icon1.png" catchtap='close'></image>
+      <view class='coarse'>您还未登录</view>
+      <view class='thin'>请先登录进行操作哦</view>
+      <view class="prop-button">
+        <view class="ok" bindtap="onConfirm" data-status="confirm">立即登录</view>
+        <view class="no" bindtap="close" data-status="cancel">暂不登录</view>
+      </view>
+    </view>
+  </view>
+</view>

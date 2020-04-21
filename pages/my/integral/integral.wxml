@@ -1,0 +1,19 @@
+<view class="total">
+  <view class="big">
+    <view class="small">
+      <view class="wenzi">6</view>
+    </view>
+  </view>
+  <navigator class="mid" url="../integralExplain/integralExplain">
+    <image src="/images/wh.png"></image>
+    <text>积分说明</text>
+  </navigator>
+  <view class="body">
+    <view class="row1">{{name}}</view>
+    <view class="row2">恭喜您，您没有违约与纠纷记录</view>
+    <view class="row3">请您保持您的信誉，以真诚之心行信义之事</view>
+    <view class="row4" catchtap='record'>查看您的积分变更记录</view>
+    <view class="row5" catchtap='record'></view>
+  </view>
+  <view class="foot">最终解释权归种民网络有限公司所有</view>
+</view>

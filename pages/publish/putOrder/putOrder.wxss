@@ -1,0 +1,503 @@
+page {
+  background: rgba(240, 240, 240, 1);
+}
+
+.publish {
+  padding: 0 24rpx;
+  padding-top: 38rpx;
+  padding-bottom: 64rpx;
+  background: rgba(240, 240, 240, 1);
+}
+
+.row1, .row2 {
+  padding: 22rpx 20rpx;
+  background-color: #fff;
+  border-radius: 12rpx;
+}
+
+.row2 {
+  margin-top: 38rpx;
+  overflow: hidden;
+}
+
+.row2 .entry {
+  float: left;
+  height: 45rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 45rpx;
+}
+
+.row2 .ts {
+  float: left;
+  width: 364rpx;
+  height: 42rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  line-height: 42rpx;
+  padding-left: 134rpx;
+  padding-top: 0rpx;
+  text-align: right;
+}
+
+.ph {
+  height: 42rpx;
+  line-height: 42rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.row2 .xq {
+  overflow: hidden;
+}
+
+.row2 .fwdz {
+  width: 252rpx;
+  padding-left: 246rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.row2 .jg {
+  padding-top: 0rpx;
+}
+
+.row2 .arrow {
+  float: right;
+  width: 19rpx;
+  height: 19rpx;
+  line-height: 23rpx;
+  border-top: 2rpx solid #999;
+  border-right: 2rpx solid #999;
+  transform: rotate(45deg);
+  margin-top: 13rpx;
+}
+
+.row2 .dwy {
+  position: relative;
+}
+
+.row2 .line {
+  width: 662rpx;
+  height: 2rpx;
+  background: #ededed;
+  position: absolute;
+  top: 62rpx;
+}
+
+/* 消除圆角 */
+
+.pic-all .xcyj-xia {
+  border-bottom-left-radius: 0rpx;
+  border-bottom-right-radius: 0rpx;
+}
+
+.pic-all .pic-box {
+  padding-top: 30rpx;
+  padding-left: 2rpx;
+  padding-right: 2rpx;
+  background-color: #fff;
+  border-radius: 12rpx;
+}
+
+.pic-all .xcyj-top {
+  border-top-left-radius: 0rpx;
+  border-top-right-radius: 0rpx;
+}
+
+.pic-all .pic-box .pic-item {
+  width: 152rpx;
+  height: 140rpx;
+  background: rgba(244, 244, 244, 1);
+  border-radius: 8rpx;
+  display: inline-block;
+  margin-left: 18rpx;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+
+.pic-all .pic-box .pic-item image {
+  background: rgba(244, 244, 244, 1);
+  border-radius: 8rpx;
+  width: 100%;
+  height: 100%;
+}
+
+.pic-all .pic-box .pic-item .upimg {
+  width: 68rpx;
+  height: 56rpx;
+  padding: 42rpx;
+}
+
+.pic-all .pic-box .pic-item .delete {
+  width: 16rpx;
+  height: 16rpx;
+  padding: 0rpx 7rpx 8rpx 7rpx;
+  color: white;
+  font-size: 24rpx;
+  line-height: 16rpx;
+  text-align: center;
+  position: absolute;
+  top: 0rpx;
+  right: 0rpx;
+  background: rgba(0, 0, 0, 0.46);
+  border-radius: 0rpx 8rpx 0rpx 8rpx;
+}
+
+.qran {
+  margin-top: 64rpx;
+  /* margin-bottom:64rpx; */
+}
+
+.qran button {
+  width: 560rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  background: rgba(145, 213, 173, 1);
+  border-radius: 45rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
+
+.qran button::after {
+  border: none;
+}
+
+.bottomTs {
+  width: 702rpx;
+  margin: 0rpx auto;
+  margin-top: 36rpx;
+}
+
+.bottomTs .bot {
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+}
+
+#hint {
+  height: 33rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Light;
+  font-weight: 300;
+  color: rgba(237, 175, 51, 1);
+  line-height: 33rpx;
+  margin-top: 16rpx;
+}
+
+#hint>text {
+  color: #edaf33;
+  font-size: 24rpx;
+}
+
+/* -------选择地址的弹窗------------*/
+
+.addmsk {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.addmsk2 {
+  display: block;
+}
+
+.addContainer {
+  position: fixed;
+  bottom: 0rpx;
+  width: 750rpx;
+  height: 816rpx;
+  z-index: 30;
+}
+
+.addWin .addContainer .addprop {
+  width: 750rpx;
+  background: #fff;
+}
+
+.addWin .addContainer .addprop .addtit {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 24rpx;
+  border-bottom: 1px solid #ededed;
+}
+
+.addWin .addContainer .addprop .addtit .cancal {
+  width: 52rpx;
+  height: 37rpx;
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  line-height: 37rpx;
+}
+
+.addWin .addContainer .addprop .addtit .chotit {
+  width: 180rpx;
+  height: 42rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 42rpx;
+  margin-left: 209rpx;
+}
+
+.addWin .addContainer .addprop .addcont {
+  height: 645rpx;
+  padding-left: 24rpx;
+}
+
+/*单选样式 */
+
+radio .wx-radio-input {
+  height: 32rpx;
+  width: 32rpx;
+}
+
+.addWin .addContainer .addprop .addcont .rad-row {
+  width: 628rpx;
+  height: 85rpx;
+  padding-top: 24rpx;
+  padding-bottom: 26rpx;
+  margin-left: 20rpx;
+}
+
+.addWin .addContainer .addprop .addcont .rad-row .left {
+  height: 85rpx;
+  width: 424rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.addWin .addContainer .addprop .addcont .rad-row .left .adname {
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 40rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.addWin .addContainer .addprop .addcont .rad-row .left .le-foot {
+  height: 33rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 33rpx;
+  margin-top: 12rpx;
+}
+
+.addWin .addContainer .addprop .addcont .rad-row .left .le-foot .tex2 {
+  margin-left: 58rpx;
+}
+
+.addWin .addContainer .addprop .addcont .rad-row .right {
+  float: right;
+  height: 85rpx;
+  line-height: 85rpx;
+}
+
+.addWin .addContainer .addprop .addcont .rad-row .right .pub {
+  display: flex;
+  align-items: center;
+}
+
+.addWin .addContainer .addprop .addcont .rad-row .right .pub image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.addWin .addContainer .addprop .addcont .rad-row .right .pub text {
+  font-size: 26rpx;
+  font-family: PingFangSC-Light, PingFang SC;
+  font-weight: 300;
+  color: rgba(102, 102, 102, 1);
+  margin-left: 16rpx;
+}
+
+.addWin .addContainer .addprop .addcont .rad-row .fg-line {
+  height: 1rpx;
+  width: 628rpx;
+  margin-top: 26rpx;
+  background: rgba(237, 237, 237, 1);
+}
+
+/* 没有服务地址部分 */
+
+.nodz {
+  height: 645rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nodz image {
+  display: block;
+  width: 289rpx;
+  height: 258rpx;
+  margin: 0 auto;
+  margin-top: 140rpx;
+}
+
+.nodz .addwarn {
+  width: 308rpx;
+  height: 90rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  line-height: 40rpx;
+  margin: 0 auto;
+  margin-top: 55rpx;
+}
+
+.nodz .addwarn text {
+  display: block;
+  text-align: center;
+}
+
+/* 底部按钮部分 */
+
+.addWin .addContainer .addprop .addview {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #ededed;
+}
+
+.addWin .addContainer .addprop .addview image {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.addWin .addContainer .addprop .addview .add {
+  width: 180rpx;
+  height: 42rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 42rpx;
+  padding: 23rpx;
+}
+
+/* ------------------------------------- */
+
+/* -------登录的弹窗------------*/
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.mask2 {
+  display: block;
+}
+
+.container {
+  position: fixed;
+  bottom: 480rpx;
+  width: 550rpx;
+  height: 360rpx;
+  margin-left: 100rpx;
+  /* transform: translateY(300%);
+  transition: all 0.4s ease; */
+  z-index: 12;
+  border-radius: 20rpx;
+}
+
+.dialog .container .prop {
+  position: relative;
+}
+
+.dialog .container .prop image {
+  display: block;
+  width: 46rpx;
+  height: 46rpx;
+  padding: 10rpx;
+  position: absolute;
+  top: -30rpx;
+  right: -30rpx;
+}
+
+.dialog .container .prop .coarse {
+  width: 180rpx;
+  height: 50rpx;
+  font-size: 36rpx;
+  font-family: PingFangSC;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  line-height: 50rpx;
+  padding-top: 60rpx;
+  margin: 0 auto;
+}
+
+.dialog .container .prop .thin {
+  width: 260rpx;
+  height: 37rpx;
+  font-size: 26rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 37rpx;
+  padding-top: 36rpx;
+  margin: 0 auto;
+}
+
+.dialog .container .prop .prop-button {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 450rpx;
+  margin: 0 auto;
+  margin-top: 60rpx;
+}
+
+.dialog .container .prop .prop-button .ok,
+.dialog .container .prop .prop-button .no {
+  width: 128rpx;
+  height: 45rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  line-height: 45rpx;
+  padding: 12rpx 39rpx;
+  border-radius: 35rpx;
+}
+
+.dialog .container .prop .prop-button .ok {
+  color: rgba(58, 141, 92, 1);
+  background: rgba(255, 255, 255, 1);
+}
+
+.dialog .container .prop .prop-button .no {
+  color: rgba(255, 255, 255, 1);
+  border: 2rpx solid rgba(255, 255, 255, 1);
+}

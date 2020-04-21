@@ -1,0 +1,89 @@
+<!-- 接单者进入订单详情里看到的页面 -->
+<view class="info-top" style="background: url('http://apppic.zomin.cn/FoBOr9PcJQxpeGmMlwpbxiqltAPq') no-repeat;background-size:100%">
+  <view class="inner">
+    <view class="status">{{remark}}</view>
+    <view class="prompt">{{marked}}</view>
+  </view>
+</view>
+
+<view class="state">
+  <view class="item">
+    <view class="circle {{color1}}"></view>
+    <view class="circle {{color2}}"></view>
+    <view class="circle {{color3}}"></view>
+    <view class="circle {{color4}}"></view>
+    <view class="circle {{color5}}"></view>
+  </view>
+  <view class="item special">
+    <view class="wenzi">等待确认</view>
+    <view class="wenzi">准备服务</view>
+    <view class="wenzi">正在服务</view>
+    <view class="wenzi">完成服务</view>
+    <view wx:if="{{status=='2010'}}" class="wenzi">订单取消</view>
+    <view wx:else class="wenzi">订单关闭</view>
+  </view>
+</view>
+
+<view class="details-middle">
+  <view class="line">
+    <view class="line-item zb"></view>
+    <view class="line-item hs"></view>
+    <view class="line-item"></view>
+    <view class="line-item hs"></view>
+    <view class="line-item"></view>
+    <view class="line-item hs"></view>
+  </view>
+
+  <view class="detail">
+    <view class="row jdz {{putterInfo}}" style="position: relative;">
+      <view>{{processRealName}}</view>
+      <view class="num">{{processPhone}}</view>
+
+      <!-- 打电话按钮是否显示 -->
+      <view class="call {{callPhone}}" style="position: absolute;right:56rpx;top:20rpx;" data-fdphone="{{users_info.login_phone}}" bindtap='telput'>
+        <image src="/images/lxdh.png" style="width:60rpx;height:60rpx;"></image>
+      </view>
+    </view>
+    
+    <view class="row">
+      <image src="/images/sj.png"></image>
+      <view class="time">{{business_start_time}}</view>
+    </view>
+    <view class="row">
+      <image src="/images/dw.png" style="width:26rpx;"></image>
+      <view class="address">{{address}}{{house_num}}</view>
+    </view>
+    <view wx:if="{{status=='1000' || status=='1010' || status=='1020' || status=='1030'}}" class="row">
+      <view class="distance">距您{{distance}} | <text data-toAddress="{{address}}" data-lat="{{gps_lat}}" data-lon="{{gps_lon}}" bindtap='nav'>查看地图导航></text></view>
+    </view>
+  </view>
+</view>
+
+<view class="details-bottom">
+  <view class="row1">
+    <view class="title">{{title}}</view>
+    <view class="price">¥ {{get_price}}</view>
+  </view>
+  <view class="row2">{{content}}</view>
+  <!-- <view class="row3">{{point_remark}}</view> -->
+
+  <view class="hidd">
+    <view class="{{is_show?'show':'hidden'}}">
+        <image mode="widthFix" wx:for="{{images}}"  wx:key="id" wx:for-item="imgUrl" width="100%" height="100%" src="{{imgUrl}}" data-src="{{imgUrl}}" catchtap='previewImg'></image>
+      <!-- <image mode="widthFix" src="{{images}}"></image> -->
+    </view>
+  </view>
+  <view class="tubiao" bindtap='seeMore'>
+    <view></view>
+  </view>
+  <view class="xq" bindtap='seeMore'>{{seeMore}}</view>
+</view>
+
+<view class="kfrx" catchtap='telKF'>
+    <text class="text1">若有疑问请拨打客服热线：</text>
+    <text class="text2">89019298</text>
+</view>
+
+<view wx:if="{{status=='1000'||status=='1010'||status=='1020'||status=='2010'||status=='1040'}}" class="foot" data-code="{{operation.code}}" bindtap='doOperater'>
+  <view class="button">{{operation.name}}</view>
+</view>

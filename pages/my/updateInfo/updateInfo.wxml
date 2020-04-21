@@ -1,0 +1,47 @@
+<view id="big">
+  <view class='row' bindtap='changeUserImg'>
+    <text>头像</text>
+    <view class="rig">
+      <image class="user-img" src="{{users_image}}"></image>
+      <view class='arrow'></view>
+    </view>
+  </view>
+  
+  <navigator class='row' url="/pages/my/changePhoneNumber/changePhoneNumber?phone={{login_phone}}" hover-class="none">
+    <text>手机号</text>
+    <view class="rig">
+      <view class="zt">{{process_phone}}</view>
+      <view class='arrow'></view>
+    </view>
+  </navigator>
+
+  <!-- <navigator class='row' url="/pages/my/changeNickName/changeNickName" hover-class="none">
+    <text>昵称</text>
+    <view class="rig">
+      <view class="zt">{{nickname}}</view>
+      <view class='arrow'></view>
+    </view>
+  </navigator> -->
+
+  <view class='row'>
+    <text>性别</text>
+    <view class="rig">
+      <view wx:if="{{sex==2}}" class="pub colorgrey">
+        <image src="/images/female.png"></image>
+        <text>女</text>
+      </view>
+      <view wx:else class="pub colorgrey">
+        <image src="/images/male.png"></image>
+        <text>男</text>
+      </view>
+    </view>
+  </view>
+
+  <navigator class='row' url="../integral/integral?name={{real_name}}" hover-class="none">
+    <text>信誉积分</text>
+    <view class="rig">
+      <view class="zt">6</view>
+      <view class='arrow'></view>
+    </view>
+  </navigator>
+</view>

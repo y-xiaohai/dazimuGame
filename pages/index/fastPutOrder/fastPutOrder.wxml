@@ -1,0 +1,44 @@
+<form bindsubmit="putSumbit" report-submit = "true">
+
+  <view class="head">
+    <image mode="aspectFill" src="{{image}}" data-ur="{{image}}" catchtap='previewImg'></image>
+  </view>
+
+  <view class="mid">
+    <view class="pub">标题</view>
+    <input class="input1" placeholder='{{titleTS}}' maxlength='30' placeholder-class='ph' data-name="title" bindinput='inputEidt'></input>
+    <view class="pub">服务金额</view>
+    <view class="jebf">
+      <view class="jefh">￥</view>
+      <input class="input2" placeholder='{{priceTS}}' placeholder-class='ph' bindinput='inputPrice' data-name="price" focus="{{focus}}" value='{{price}}' type="digit"></input>
+    </view>
+
+    <input class="input3" placeholder='{{contentTS}}' maxlength='100' placeholder-class='ph' bindinput='inputContent'></input>
+  </view>
+
+  <view class="consb">
+    <button formType="submit">确认发布</button>
+  </view>
+
+  <view class="bottomTs">
+    <view class="bot">此订单仅限于线下，不提供配送上门服务</view>
+  </view>
+
+</form>
+
+<!-- 弹窗 -->
+<view class="dialog" wx:if="{{showDialog}}">
+  <!-- 遮罩层view-->
+  <view class="mask {{showDialog?'mask2':''}}" catchtouchmove="preventTouchMove"></view>
+  <view class="container" style="background-image: url('http://apppic.zomin.cn/FqdoaVqgsprOFAcfoxN3WgIZCPFW'); background-size:cover" catchtouchmove='preventTouchMove'>
+    <view class="prop">
+      <image src="/images/icon1.png" catchtap='close'></image>
+      <view class='coarse'>您还未登录</view>
+      <view class='thin'>请先登录在进行操作哦</view>
+      <view class="prop-button">
+        <view class="ok" bindtap="onConfirm" data-status="confirm">立即登录</view>
+        <view class="no" bindtap="close" data-status="cancel">暂不登录</view>
+      </view>
+    </view>
+  </view>
+</view>

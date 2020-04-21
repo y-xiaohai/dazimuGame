@@ -1,0 +1,50 @@
+<view class='search-box'>
+  <image src="/images/dw.png"></image>
+  <view class="city">{{addressDetail.city_name}}</view>
+  <view class="inp">
+    <image src="/images/search.png"></image>
+    <input placeholder='请输入服务地址' placeholder-class='' bindinput='handleinput'></input>
+  </view>
+  <view class="search" bindtap='searchAddress'>搜索</view>
+</view>
+
+<view class="line"></view>
+
+<!-- 默认时页面 -->
+<view hidden="{{defaultIsShow}}">
+  <view class="current">
+    <view class="left" bindtap='returnAddress' data-name="{{addressDetail.name}}" data-address="{{addressDetail.address}}" data-code="{{addressDetail.city_code}}" data-lon="{{addressDetail.hx_lon}}" data-lat="{{addressDetail.hx_lat}}">当前位置：{{addressDetail.name}}</view>
+    <view class="right" bindtap='againPosition'>
+      <image src="/images/cxdw.png"></image>
+      <view class="cxdw">重新定位</view>
+    </view>
+  </view>
+
+  <view class="nearAddress">
+    <view class="near">
+      <image src="/images/dw.png"></image>
+      <view class="wenzi">附近位置</view>
+    </view>
+    <view class="lbx" wx:key="id" wx:for="{{nearLists}}" wx:for-index="{{index}}" wx:for-item="nearList" bindtap='returnAddress' data-name="{{nearList.name}}" data-address="{{nearList.address}}" data-code="{{nearList.city_code}}" data-lon="{{nearList.hx_lon}}" data-lat="{{nearList.hx_lat}}">
+      <text>{{nearList.name}}</text>
+    </view>
+  </view>
+
+</view>
+
+<view class="total" wx:for="{{addressListByKey}}" wx:for-item="list" wx:key="id" wx:for-index="{{index}}"> 
+  <view class="item" data-code="{{city_code}}" data-name="{{list.notProName}}" data-address="{{list.address}}" data-code="{{list.city_code}}" data-lon="{{list.hx_lon}}" data-lat="{{list.hx_lat}}" bindtap='returnAddress'>
+    <view class="row1">
+        <!-- <view class="item-name">{{list.name}}</view> -->
+
+      <view class="item-name">
+        <block wx:for="{{list.name}}" wx:key="" wx:for-item="name">
+          <text wx:if="{{name.key == true}}" style="color:#91D5AD;">{{name.str}}</text><text wx:else>{{name.str}}</text>
+        </block>
+      </view>
+    
+      <view class="item-distance">{{list.distance}}</view>
+    </view>
+    <view class="item-address">{{list.address}}</view>
+  </view>  
+</view>

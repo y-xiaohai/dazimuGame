@@ -1,0 +1,16 @@
+<view class="wall">
+  <input type='number' placeholder="请输入手机号" placeholder-class='ph' maxlength='11' bindinput='inputPhone' value="{{phone}}"></input>
+
+  <view class="row-box">
+    <input class="left-input" type='number' placeholder="请输入您的验证码" placeholder-class='ph' maxlength='4' bindinput='inputCode'></input>
+    <button class="right-button {{color1?'green':''}}" disabled="{{disable1}}" bindtap='sendVerifCode'>{{clues}}</button>
+  </view>
+
+  <input type='number' password='{{true}}' placeholder="请输入您的新密码" maxlength='6' placeholder-class='ph' bindinput='inputPwd' value="{{password}}"></input>
+
+  <input type='number' password='{{true}}' placeholder="请再次输入以确认" maxlength='6' placeholder-class='ph' bindinput='againPwd' value="{{againPassword}}"></input>
+
+  <view class="button-box">
+    <button class="{{color2?'green':''}}" formType="submit" disabled="{{disable2}}" bindtap='confChange'>确定</button>
+  </view>
+</view>

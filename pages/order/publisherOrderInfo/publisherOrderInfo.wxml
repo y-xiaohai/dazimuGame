@@ -1,0 +1,113 @@
+<!-- 发单者进入订单详情里看到的页面 -->
+<view class="info-top" style="background: url('http://apppic.zomin.cn/FoBOr9PcJQxpeGmMlwpbxiqltAPq') no-repeat;background-size:100%">
+  <view class="inner">
+    <view class="status">{{remark}}</view>
+    <view class="prompt">{{marked}}</view>
+  </view>
+</view>
+
+<view class="state">
+  <view class="item">
+    <view class="circle {{color1}}"></view>
+    <view class="circle {{color2}}"></view>
+    <view class="circle {{color3}}"></view>
+    <view class="circle {{color4}}"></view>
+    <view class="circle {{color5}}"></view>
+  </view>
+  <view class="item special">
+    <view class="wenzi">等待接单</view>
+    <view class="wenzi">等待确认</view>
+    <view class="wenzi">等待服务</view>
+    <view class="wenzi">服务完成</view>
+    <view wx:if="{{status==2020}}" class="wenzi">订单过期</view>
+    <view wx:elif="{{status==2010}}" class="wenzi">订单取消</view>
+    <view wx:else class="wenzi">订单关闭</view>
+  </view>
+</view>
+
+<view class="details-middle">
+  <view class="line">
+    <view class="line-item zb"></view>
+    <view class="line-item hs"></view>
+    <view class="line-item"></view>
+    <view class="line-item hs"></view>
+    <view class="line-item"></view>
+    <view class="line-item hs"></view>
+  </view>
+  <view class="detail">
+    <view class="row jdz {{getterInfo}}" style="position: relative;">
+      <view>{{processRealName}}</view>
+      <view class="num">{{processPhone}}</view>
+
+      <!-- 打电话按钮是否显示 -->
+      <view class="call {{callPhone}}" style="position: absolute;right:56rpx;top:20rpx;" data-fdphone="{{deal_info.login_phone}}" bindtap='telget'>
+        <image src="/images/lxdh.png" style="width:60rpx;height:60rpx;"></image>
+      </view>
+    </view>
+
+    <view class="row">
+      <image src="/images/sj.png"></image>
+      <view class="time">{{business_start_time}}</view>
+    </view>
+    <view class="row">
+      <image src="/images/dw.png" style="width:26rpx;"></image>
+      <view class="address">{{address}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="details-bottom">
+  <view class="row1">
+    <view class="title">{{title}}</view>
+    <view class="price">¥ {{price}}</view>
+  </view>
+  <view class="row2">{{content}}</view>
+  <view class="row3">{{point_remark}}</view>
+  <view class="hidd">
+    <view class="{{is_show?'show':'hidden'}}">
+        <image mode="widthFix" wx:for="{{images}}"  wx:key="id" wx:for-item="imgUrl" width="100%" height="100%" src="{{imgUrl}}" data-src="{{imgUrl}}" catchtap='previewImg'></image>
+      <!-- <image mode="" src="{{images}}"></image> -->
+    </view>
+  </view>
+  <view class="tubiao" bindtap='seeMore'>
+    <view></view>
+  </view>
+  <view class="xq" bindtap='seeMore'>{{seeMore}}</view>
+</view>
+
+<view class="kfrx" catchtap='telKF'>
+  <text class="text1">若有疑问请拨打客服热线：</text>
+  <text class="text2">89019298</text>
+</view>
+
+<!-- <view class="foot">
+  <view class="inner">
+    <view class="zuo">
+      <view class="button1 button2 {{disService}}" bindtap='confirmService'>确认用户</view>
+      <view class="button1 button2 {{disPay}}" bindtap='payOrder'>确认付款</view>
+    </view>
+    <view class="you">
+      <view class="button1 {{disCancel}}" bindtap="cancelOrder">取消订单</view>
+      <view class="button1 {{disDelete}}" bindtap="deleteOrder">删除订单</view>
+      <view class="button1 button3 {{disTel}}" bindtap='tel'>联系接单者</view>
+    </view>
+  </view>
+</view> -->
+
+<view wx:if="{{status=='0'||status=='2020'}}" class="footNew" data-code="{{operation[0].code}}" bindtap='cancelOrder'>
+  <view class="button">{{operation[0].name}}</view>
+</view>
+
+<view wx:elif="{{status=='1030'}}" class="footNew" data-code="{{operation[0].code}}" bindtap='doOperater'>
+  <view class="button">{{operation[0].name}}</view>
+</view>
+
+<view wx:elif="{{status=='2010'||status=='1040'}}" class="footNew" data-code="{{operation[0].code}}" bindtap='deleteOrder'>
+  <view class="button">{{operation[0].name}}</view>
+</view>
+
+<view wx:elif="{{status=='1005'}}" class="footNew">
+  <view class="button1" data-code="{{operation[0].code}}" bindtap='doOperater'>{{operation[0].name}}</view>
+  <view class="button2" data-code="{{operation[1].code}}" bindtap='cancelOrder'>{{operation[1].name}}</view>
+</view>
+

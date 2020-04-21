@@ -1,0 +1,188 @@
+page{
+  background:#F0F0F0;
+}
+.title{
+  height:40rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height:40rpx;
+  margin-top: 76rpx;
+  margin-left: 24rpx;
+}
+.cash{
+  padding: 0 24rpx;
+  height:88rpx;
+  margin-top: 18rpx;
+  background:rgba(255,255,255,1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.cash text{
+  height:88rpx;
+  font-size:32rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(0,0,0,1);
+  line-height:88rpx;
+  letter-spacing:1rpx;
+}
+.cash .input1{
+  width: 533rpx;
+  height:45rpx;
+  font-size:32rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:45rpx;
+  letter-spacing:1rpx;
+  margin-left: 36rpx;
+}
+
+.balance{
+  margin: 0 24rpx;
+  margin-top: 18rpx;
+}
+.balance .texta,.balance .textb,.balance .textc{
+  height:37rpx;
+  font-size:26rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  line-height:37rpx;
+}
+.balance .texta{
+  color:rgba(153,153,153,1);
+}
+.balance .textb{
+  color:#EDAF33;
+}
+.balance .textc{
+  margin-left: 20rpx;
+  color:rgba(104,183,169,1);
+}
+
+.btn button{
+  width: 436rpx;
+  font-size: 36rpx;
+  color: #fff;
+  background:rgba(145,213,173,1);
+  margin-top: 186rpx;
+  border-radius: 46rpx;
+}
+/* 按钮禁用时的样式 */
+.btn button[disabled]{
+  color: #fff;
+  background-color:rgba(214,214,214,1) !important;
+}
+button::after{
+  border: none;
+}
+.prom{
+  width:156rpx;
+  height:28rpx;
+  font-size:20rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(136,136,136,1);
+  line-height:28rpx;
+  margin: 0 auto;
+  margin-top: 22rpx;
+}
+
+
+/* ---弹窗部分----- */
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+.container {
+  position: fixed;
+  bottom: 432rpx;
+  width: 750rpx;
+  height: 350rpx;
+  /* margin-left: 50rpx; */
+  background: #fff;
+  transform: translateY(300%);
+  transition: all 0.4s ease;
+  z-index: 12;
+  border-radius:16rpx 16rpx 0rpx 0rpx;
+}
+.dialog-show .container {
+  transform: translateY(0);
+  /* transition: all 0.2s ease; */
+}
+.dialog-show .mask {
+  display: block;
+}
+.pop-window .row1{
+  margin-top: 22rpx;
+  text-align: center;
+  position: relative;
+}
+.pop-window .row1 .hint{
+  height:45rpx;
+  font-size:32rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:45rpx;
+  display: inline-block;
+  margin: 0 auto;
+}
+.pop-window .row1 image{
+  display: block;
+  width:22rpx;
+  height:22rpx;
+  padding: 10rpx;
+  position: absolute;
+  top: 2rpx;
+  right: 28rpx;
+}
+
+/* ---------- */
+.content{
+  margin-top: 54rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 54rpx;
+  margin-right: 54rpx;
+  border: 1rpx solid #CDCACA;
+  border-right: none;
+}
+.ipt1{
+  width: 620rpx;
+  height: 92rpx;
+  border-right: 1rpx solid #CDCACA;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #fff;
+}
+
+.ipt2{
+  width: 0;
+  height: 0;
+}
+
+.findpwd{
+  width:122px;
+  height:42rpx;
+  font-size:30rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:42rpx;
+  margin: 0 auto;
+  text-align: center;
+}

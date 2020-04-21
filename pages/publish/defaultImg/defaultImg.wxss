@@ -1,0 +1,74 @@
+/* pages/publish/defaultImg.wxss */
+page{
+  height:100%;
+  background:rgba(240,240,240,1);
+}
+
+.default{
+  padding-top: 46rpx;
+  background:rgba(240,240,240,1);
+  overflow: hidden;
+}
+.default .pic-box{
+  overflow: hidden;
+}
+
+.default .pic-box .pic-item{
+  float: left;
+  width:214rpx;
+  height:214rpx;
+  background-color: wheat;
+  border-radius: 10rpx;
+  margin-left: 24rpx;
+  margin-right: 6rpx;
+  margin-bottom: 26rpx;
+  position:relative;
+}
+
+.default .pic-box .pic-item image{
+  width:214rpx;
+  height:214rpx;
+  border-radius: 10rpx;
+  display: block;
+}
+
+.default .pic-box .pic-item checkbox .wx-checkbox-input{
+  width: 44rpx;
+  height: 44rpx;
+  position: absolute;
+  top: 10rpx;
+  right: 0rpx;
+  border-radius: 50%;
+  border: 2rpx solid #fff;
+  background-color: #000;
+  opacity: 0.36;
+}
+
+.default .pic-box .pic-item checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+  border: 2rpx solid #fff;
+  background-color: #91D5AD;
+  opacity: 1.0;
+}
+/* 选中后的 对勾样式*/
+.default .pic-box .pic-item checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+  color:#fff;
+}
+
+.qran{
+  margin-top:64rpx;
+}
+.qran button{
+  width:560rpx;
+  height:90rpx;
+  line-height: 90rpx;
+  background:rgba(145,213,173,1);
+  border-radius:45rpx;
+  font-size:32rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+}
+
+.qran button::after{
+  border: none;
+}

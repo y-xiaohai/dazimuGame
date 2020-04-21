@@ -1,0 +1,409 @@
+page{ 
+  display: flex; 
+  flex-direction: column;
+  background-color: #f2f2f2;
+  height: 100%; 
+} 
+.navbar{ 
+  flex: none; 
+  display: flex; 
+  background: #F7F7F7; 
+  text-align: center;
+  position: fixed; 
+  width: 100%;
+} 
+.navbar .item{ 
+  position: relative; 
+  flex: auto; 
+  height:42rpx;
+  font-size:30rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  line-height:42rpx;
+  padding: 23rpx 0rpx;
+} 
+.out{
+  margin-top: 84rpx;
+}
+/* 顶部导航点击后样式 */
+.navbar .item.active{ 
+  height:42rpx;
+  font-size:30rpx;
+  font-family:PingFangSC-Regular;
+  font-weight: 400;
+  color:rgba(51,51,51,1);
+  line-height:42rpx;
+} 
+/* 顶部指示条属性 */
+.navbar .item.active:after{ 
+  content: ""; 
+  display: block; 
+  position: absolute; 
+  bottom: 0; 
+  left: 0; 
+  right: 0; 
+  height: 6rpx; 
+  width:118rpx;
+  background:rgba(145,213,173,1);
+  border-radius:2rpx;
+  margin: 0 auto;
+}
+
+/* ----------订单列表部分----------- */
+.all-order .line{
+  width: 750rpx;
+  height: 20rpx;
+  background: #F2F2F2;
+}
+
+.all-order .order-xq{
+  background: #fff;
+  padding: 30rpx 24rpx;
+}
+/* 订单已关闭和已取消时背景灰色 */
+.all-order .order-xqhs{
+  background: #F8F8F8;
+}
+
+.all-order .order-xq .top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.all-order .order-xq .top .time{
+  height:33rpx;
+  font-size:24rpx;
+  font-family:PingFangSC-Light;
+  font-weight:300;
+  color:rgba(153,153,153,1);
+  line-height:33rpx;
+}
+.all-order .order-xq .top .role{
+  height:33rpx;
+  font-size:24rpx;
+  font-family:PingFangSC-Light;
+  font-weight:300;
+  color:rgba(145,213,173,1);
+  line-height:33rpx;
+  border-radius:8rpx;
+  border:1rpx solid rgba(145,213,173,1);
+  padding: 0rpx 8rpx;
+  /* margin-left: 130rpx; */
+}
+
+.all-order .order-xq .top .staus{
+  height:40rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:40rpx;
+}
+/* 订单已关闭和已取消时状态字体色 */
+.all-order .order-xq .top .staus-hs{
+  color:rgba(153,153,153,1);
+}
+
+.all-order .order-xq .middle{
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+  margin-top: 26rpx;
+  
+}
+
+.all-order .order-xq .middle .left image{
+  width:156rpx;
+  height:156rpx;
+  background:rgba(216,216,216,1);
+  border-radius:8rpx;
+  /* border:1rpx solid rgba(151,151,151,1); */
+}
+
+.all-order .order-xq .middle .right{
+  margin-left: 30rpx;
+}
+
+.all-order .order-xq .middle .right .title{
+  height:42rpx;
+  font-size:30rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:42rpx;
+}
+/* 订单已关闭和已取消时字体色 */
+.all-order .order-xq .middle .right .title-hs{
+  color:rgba(153,153,153,1);
+}
+
+.all-order .order-xq .middle .right .content{
+  height:37rpx;
+  font-size:26rpx;
+  font-family:PingFangSC-Light;
+  font-weight:300;
+  color:rgba(102,102,102,1);
+  line-height:37rpx;
+  margin-top: 14rpx;
+}
+/* 订单已关闭和已取消时字体色 */
+.all-order .order-xq .middle .right .content-hs{
+  color:rgba(153,153,153,1);
+}
+
+.hid{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+  text-align: left;
+  width: 516rpx;
+}
+
+.all-order .order-xq .middle .right .right-bot{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15rpx;
+}
+
+.all-order .order-xq .middle .right .right-bot .price{
+  height:48rpx;
+  font-size:30rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(237,175,51,1);
+  line-height:48rpx;
+}
+/* 订单已关闭和已取消时字体色 */
+.all-order .order-xq .middle .right .right-bot .price-hs{
+  color:rgba(153,153,153,1);
+}
+
+.all-order .order-xq .middle .right .right-bot .call{
+  height:52rpx;
+  margin-left: 80rpx;
+}
+.all-order .order-xq .middle .right .right-bot .callhidd{
+  display: none;
+}
+.all-order .order-xq .middle .right .right-bot .call image{
+  width:40rpx;
+  height:40rpx;
+  padding: 5rpx 20rpx;
+  
+}
+.all-order .order-xq .middle .right .right-bot .operation{
+  height:37rpx;
+  font-size:26rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(237,175,51,1);
+  line-height:37rpx;
+  padding: 5rpx 30rpx;
+  border-radius:8rpx;
+  border:1rpx solid rgba(237,175,51,1);
+}
+/* 订单已关闭和已取消时按钮色 */
+.all-order .order-xq .middle .right .right-bot .operation-hs{
+  color:rgba(102,102,102,1);
+  border:1px solid rgba(187,187,187,1);
+}
+
+/* 全部订单列表里要用到的 */
+.all-order .order-xq .middle .right .right-bot .operationhidd{
+  display: none;
+}
+/* 我的服务订单列表里用到 */
+.all-order .order-xq .middle .right .right-bot .operationlw{
+  color:rgba(153,153,153,1);
+  border:1rpx solid rgba(187,187,187,1);
+}
+
+
+.all-order .order-xq .bottom{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 26rpx;
+}
+.all-order .order-xq .bottom .address{
+  height:33rpx;
+  font-size:24rpx;
+  font-family:PingFangSC-Light;
+  font-weight:300;
+  color:rgba(153,153,153,1);
+  line-height:33rpx;
+  width: 570rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+}
+.all-order .order-xq .bottom .distance{
+  height:33rpx;
+  font-size:24rpx;
+  font-family:PingFangSC-Light;
+  font-weight:300;
+  color:rgba(153,153,153,1);
+  line-height:33rpx;
+}
+
+/* 没有更多等提示文字部分 */
+.dbts{
+  background: #f2f2f2;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.dbts .inner-bg{
+  display: inline-flex;
+  height: 105rpx;
+}
+.dbts .inner-bg .tswz{
+  height:33rpx;
+  font-size:24rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height:33rpx;
+  letter-spacing:1rpx;
+  margin: 36rpx 20rpx;
+}
+.dbts .inner-bg .xt-left,.dbts .inner-bg .xt-right{
+  width:150rpx;
+  height:1rpx;
+  background:rgba(216,216,216,1);
+  margin: 52rpx 0;
+}
+
+
+/*没有订单时部分  */
+.not-big{
+  margin-top: 220rpx;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background: #f2f2f2;
+  padding-bottom: 93rpx;
+}
+.item-img{
+  width: 450rpx;
+  height: 370rpx;
+}
+.item-text{
+  font-size: 24rpx;
+  color: #999;
+}
+.not-big .butt{
+  width:128rpx;
+  height:45rpx;
+  font-size:32rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  line-height:45rpx;
+  background:linear-gradient(90deg,rgba(170,225,193,1) 0%,rgba(140,205,166,1) 100%);
+  border-radius:47rpx;
+  padding: 16rpx 54rpx;
+  margin: auto;
+  margin-top: 36rpx;
+}
+
+/* -------弹窗------------*/
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.mask2 {
+  display: block;
+}
+
+.container {
+  position: fixed;
+  bottom: 480rpx;
+  width: 550rpx;
+  height: 360rpx;
+  margin-left: 100rpx;
+  /* transform: translateY(300%);
+  transition: all 0.4s ease; */
+  z-index: 12;
+  border-radius: 20rpx;
+}
+
+.dialog .container .prop{
+  position: relative;
+}
+
+.dialog .container .prop image{
+  display: block;
+  width: 46rpx;
+  height: 46rpx;
+  padding: 10rpx;
+  position: absolute;
+  top: -30rpx;
+  right: -30rpx;
+}
+
+.dialog .container .prop .coarse{
+  width:180rpx;
+  height:50rpx;
+  font-size:36rpx;
+  font-family:PingFangSC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  line-height:50rpx;
+  padding-top: 60rpx;
+  margin: 0 auto;
+}
+
+.dialog .container .prop .thin{
+  width:260rpx;
+  height:37rpx;
+  font-size:26rpx;
+  font-family:PingFangSC;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  line-height:37rpx;
+  padding-top: 36rpx;
+  margin: 0 auto;
+}
+
+.dialog .container .prop .prop-button{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 450rpx;
+  margin: 0 auto;
+  margin-top: 60rpx;
+}
+
+.dialog .container .prop .prop-button .ok,
+.dialog .container .prop .prop-button .no{
+  width:128rpx;
+  height:45rpx;
+  font-size:32rpx;
+  font-family:PingFangSC;
+  font-weight:400;
+  line-height:45rpx;
+  padding: 12rpx 39rpx;
+  border-radius:35rpx;
+}
+
+.dialog .container .prop .prop-button .ok{
+  color:rgba(58,141,92,1);
+  background:rgba(255,255,255,1);
+}
+
+.dialog .container .prop .prop-button .no{
+  color:rgba(255,255,255,1);
+  border:2rpx solid rgba(255,255,255,1);
+}

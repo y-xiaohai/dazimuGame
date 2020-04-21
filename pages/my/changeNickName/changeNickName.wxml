@@ -1,0 +1,7 @@
+<view class="cnn">
+  <view class="ts">{{ts}}</view>
+  <input type="text" placeholder="输入昵称" bindinput='getNewNickName'></input>
+  <view class="qran">
+      <button formType="submit" bindtap='conf'>确认</button>
+    </view>
+</view>

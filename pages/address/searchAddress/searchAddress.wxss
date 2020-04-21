@@ -1,0 +1,177 @@
+.search-box{
+  padding: 36rpx 24rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #333;
+}
+.search-box image{
+  width: 26rpx;
+  height: 30rpx;
+}
+.search-box .city{
+  height:40rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:40rpx;
+}
+.search-box .inp{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background:rgba(240,240,240,1);
+  border-radius: 10rpx;
+  padding: 16rpx 26rpx;
+  width: 440rpx;
+}
+.search-box .inp image{
+  width:24rpx;
+  height:24rpx;
+}
+.search-box .inp input{
+  height:40rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height:40rpx;
+  padding-left: 18rpx;
+}
+.search-box .search{
+  height:40rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(237,175,51,1);
+  line-height:40rpx;
+}
+
+.line{
+  width:750rpx;
+  height:2rpx;
+  background:rgba(237,237,237,1);
+}
+
+/* 当前位置列表 */
+.current{
+  margin: 36rpx 24rpx;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2rpx solid rgba(237,237,237,1);
+  padding-bottom: 24rpx;
+}
+.current .left{
+  height:45rpx;
+  font-size:32rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:45rpx;
+  width: 505rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+}
+.current .right{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.current .right image{
+  width:28rpx;
+  height:28rpx;
+  margin-right: 15rpx;
+}
+.current .right .cxdw{
+  height:40rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(237,175,51,1);
+  line-height:40rpx;
+}
+
+/* 附近位置列表 */
+.nearAddress{
+  padding: 0 24rpx;
+  border-top: 1rpx solid #EDEDED;
+}
+.nearAddress .near{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 36rpx;
+}
+.nearAddress .near image{
+  width:26rpx;
+  height:30rpx;
+}
+.nearAddress .near .wenzi{
+  height:37rpx;
+  font-size:26rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:37rpx;
+  margin-left: 16rpx;
+}
+.nearAddress .lbx{
+  height:40rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:40rpx;
+  margin-left: 42rpx;
+  padding-top: 26rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid rgba(237,237,237,1);
+}
+
+/* 搜索后位置列表 */
+.total{
+  padding: 0 24rpx;
+  padding-top: 10rpx;
+}
+.total .item{
+  padding-top: 26rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #EDEDED;
+}
+.total .item .row1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+.total .item .row1 .item-name{
+  height:40rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  /* color:rgba(145,213,173,1); */
+  line-height:40rpx;
+}
+.total .item .row1 .item-distance{
+  height:33rpx;
+  font-size:24rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height:33rpx;
+}
+.total .item .item-address{
+  height:33rpx;
+  font-size:24rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height:33rpx;
+  margin-top: 12rpx;
+}

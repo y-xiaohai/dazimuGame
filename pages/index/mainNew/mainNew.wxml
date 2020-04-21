@@ -1,0 +1,452 @@
+<view id="header" data-hig="{{fixTop}}">
+  <view class="head">
+    <!-- 阴影图片 -->
+    <image src="{{yytp}}"></image>
+    <swiper indicator-dots="{{true}}" indicator-color="rgba(255,255,255,0.5)" indicator-active-color="rgba(255,255,255,1)" autoplay="true" circular="true">
+      <swiper-item wx:key="id" wx:for="{{adv_list}}" wx:for-item="adv_list">
+        <image mode="widthFix" src="{{adv_list.pic_url}}" data-jumpUrl="{{adv_list.jump_url}}" data-type="{{adv_list.type}}" bindtap="tabImg"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <view class="middle">
+    <view class="middle-left">
+      <!-- <image mode="aspectFit" src="/images/chuizi.png"></image>
+      <text class="left-count">帮忙已完成{{count}}次服务</text> -->
+
+      <text class="left-count">帮忙推荐</text>
+      <text class="mid-count">真诚之心行信义之事</text>
+    </view>
+    <navigator class="middle-right" hover-class="none" url="/pages/index/morePerson/morePerson">
+      <text>更多</text>
+      <image mode="aspectFit" src="/images/jt.png"></image>
+    </navigator>
+    <!-- <text class="arrow"></text> -->
+  </view>
+
+  <scroll-view class="person" scroll-x="{{true}}">
+    <view class="pers-inner">
+      <block wx:key="ind" wx:for="{{helperList}}" wx:for-item="helper">
+        <view class="pers-item" bindtap="personDetail" data-url="../personDetailNew/personDetailNew?personId={{helper.id}}">
+          <image class="pers-pic" src="{{helper.index_image}}" mode="aspectFill"></image>
+          <!-- <view class="special">
+            <view class="spewz">插花</view>
+          </view> -->
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>
+
+<scroll-view class="scroll {{tabbarFix?'scrollFixed':''}}" scroll-x="{{true}}">
+  <view class="tab-nav">
+    <view wx:for="{{navbar}}" wx:key="id" class="item {{showtab==index?'active':''}}" data-tabindex="{{index}}" bindtap="setTab">{{item}}</view>
+  </view>
+</scroll-view>
+
+<view hidden="{{showtab!==0}}" class="{{tabbarFix?'marg_top':'marg_not'}}">
+  <view class="orderList">
+    <view id="yes">
+      <view class="inner-big">
+        <view class="item" wx:for="{{orderList}}" wx:key="id" wx:for-item="order" wx:for-index="index" bindtap="navigatDetail" data-url="../details/details?business_id={{order.business_id}}">
+          <view class='item-top'>
+            <image src="{{order.images}}" class="pic" mode="aspectFill"></image>
+            <view class="distance">{{order.distance}}</view>
+            <view wx:if="{{order.helper_users_id != 0}}" class="tag">{{order.helper_users_name}}</view>
+          </view>
+          <view class='item-title'>{{order.title}}</view>
+          <view class='item-price'>￥{{order.price}}</view>
+        </view>
+        <!-- <view class="{{(index+1)%3==0 && orderList.length!=index+1?'yesline':''}}"></view> -->
+      </view>
+    </view>
+
+    <view wx:if="{{isShow}}" class="not">
+      <view class="not-big">
+        <view>
+          <image class="item-img" src="/images/notorder.png"></image>
+        </view>
+        <view>
+          <text class="item-text">订单都被抢光啦~</text>
+        </view>
+        <view class='butt' bindtap='toPutOrder'>去发一单</view>
+      </view>
+    </view>
+
+    <view id="end" wx:if="{{orderList.length != 0}}">
+      <text>--·\tEND\t·--</text>
+    </view>
+  </view>
+</view>
+
+<view hidden="{{showtab!==1}}" class="{{tabbarFix?'marg_top':'marg_not'}}">
+  <view class="orderList">
+    <view id="yes">
+      <view class="inner-big">
+
+        <view class="item">
+          <image style="width:226rpx;height:342rpx;border-radius:10rpx; display: block;" mode="aspectFill" src="http://apppic.zomin.cn/Fig8ZoLCJr-W6u8drqVSMiTTmR5n"></image>
+        </view>
+
+        <view class="item" wx:for="{{orderList}}" wx:key="id" wx:for-item="order" wx:for-index="index" bindtap="navigatDetail" data-url="../details/details?business_id={{order.business_id}}">
+          <view class='item-top'>
+            <image src="{{order.images}}" class="pic" mode="aspectFill"></image>
+            <view class="distance">{{order.distance}}</view>
+            <view wx:if="{{order.helper_users_id != 0}}" class="tag">{{order.helper_users_name}}</view>
+          </view>
+          <view class='item-title'>{{order.title}}</view>
+          <view class='item-price'>￥{{order.price}}</view>
+        </view>
+        <!-- <view class="{{(index+1)%3==0 && orderList.length!=index+1?'yesline':''}}"></view>       -->
+      </view>
+    </view>
+
+    <!-- <view class="not" wx:if="{{orderList.length == 0}}">
+        <view class="not-big">
+          <view>
+            <image class="item-img" src="/images/notorder.png"></image>
+          </view>
+          <view>
+            <text class="item-text">订单都被抢光啦~</text>
+          </view>
+          <view class='butt' bindtap='toPutOrder'>去发一单</view>
+        </view>
+      </view> -->
+
+    <view id="end" wx:if="{{orderList.length != 0}}">
+      <text>--·\tEND\t·--</text>
+    </view>
+  </view>
+</view>
+
+<view hidden="{{showtab!==2}}" class="{{tabbarFix?'marg_top':'marg_not'}}">
+  <view class="orderList">
+    <view id="yes">
+      <view class="inner-big">
+
+        <view class="item">
+          <image style="width:226rpx;height:342rpx;border-radius:10rpx; display: block;" mode="aspectFill" src="http://apppic.zomin.cn/FrKdbRMdQ1wrxiWDSLLKOHiJybVV"></image>
+        </view>
+
+        <view class="item" wx:for="{{orderList}}" wx:key="id" wx:for-item="order" wx:for-index="index" bindtap="navigatDetail" data-url="../details/details?business_id={{order.business_id}}">
+          <view class='item-top'>
+            <image src="{{order.images}}" class="pic" mode="aspectFill"></image>
+            <view class="distance">{{order.distance}}</view>
+            <view wx:if="{{order.helper_users_id != 0}}" class="tag">{{order.helper_users_name}}</view>
+          </view>
+          <view class='item-title'>{{order.title}}</view>
+          <view class='item-price'>￥{{order.price}}</view>
+        </view>
+        <!-- <view class="{{(index+1)%3==0 && orderList.length!=index+1?'yesline':''}}"></view>       -->
+      </view>
+    </view>
+
+    <!-- <view class="not" wx:if="{{orderList.length == 0}}">
+        <view class="not-big">
+          <view>
+            <image class="item-img" src="/images/notorder.png"></image>
+          </view>
+          <view>
+            <text class="item-text">订单都被抢光啦~</text>
+          </view>
+          <view class='butt' bindtap='toPutOrder'>去发一单</view>
+        </view>
+      </view> -->
+
+    <view id="end" wx:if="{{orderList.length != 0}}">
+      <text>--·\tEND\t·--</text>
+    </view>
+  </view>
+</view>
+
+<view hidden="{{showtab!==3}}" class="{{tabbarFix?'marg_top':'marg_not'}}">
+  <view class="orderList">
+    <view id="yes">
+      <view class="inner-big">
+
+        <view class="item">
+          <image style="width:226rpx;height:342rpx;border-radius:10rpx; display: block;" mode="aspectFill" src="http://apppic.zomin.cn/FmU_c8cOn1yJ-AnxvMkX3Nsk_fgQ"></image>
+        </view>
+
+        <view class="item" wx:for="{{orderList}}" wx:key="id" wx:for-item="order" wx:for-index="index" bindtap="navigatDetail" data-url="../details/details?business_id={{order.business_id}}">
+          <view class='item-top'>
+            <image src="{{order.images}}" class="pic" mode="aspectFill"></image>
+            <view class="distance">{{order.distance}}</view>
+            <view wx:if="{{order.helper_users_id != 0}}" class="tag">{{order.helper_users_name}}</view>
+          </view>
+          <view class='item-title'>{{order.title}}</view>
+          <view class='item-price'>￥{{order.price}}</view>
+        </view>
+        <!-- <view class="{{(index+1)%3==0 && orderList.length!=index+1?'yesline':''}}"></view>       -->
+      </view>
+    </view>
+
+    <!-- <view class="not" wx:if="{{orderList.length == 0}}">
+        <view class="not-big">
+          <view>
+            <image class="item-img" src="/images/notorder.png"></image>
+          </view>
+          <view>
+            <text class="item-text">订单都被抢光啦~</text>
+          </view>
+          <view class='butt' bindtap='toPutOrder'>去发一单</view>
+        </view>
+      </view> -->
+
+    <view id="end" wx:if="{{orderList.length != 0}}">
+      <text>--·\tEND\t·--</text>
+    </view>
+  </view>
+</view>
+
+<view hidden="{{showtab!==4}}" class="{{tabbarFix?'marg_top':'marg_not'}}">
+  <view class="orderList">
+    <view id="yes">
+      <view class="inner-big">
+
+        <view class="item">
+          <image style="width:226rpx;height:342rpx;border-radius:10rpx; display: block;" mode="aspectFill" src="http://apppic.zomin.cn/FssaOoJds74fRhwexwRl-RhMPwGg"></image>
+        </view>
+
+        <view class="item" wx:for="{{orderList}}" wx:key="id" wx:for-item="order" wx:for-index="index" bindtap="navigatDetail" data-url="../details/details?business_id={{order.business_id}}">
+          <view class='item-top'>
+            <image src="{{order.images}}" class="pic" mode="aspectFill"></image>
+            <view class="distance">{{order.distance}}</view>
+            <view wx:if="{{order.helper_users_id != 0}}" class="tag">{{order.helper_users_name}}</view>
+          </view>
+          <view class='item-title'>{{order.title}}</view>
+          <view class='item-price'>￥{{order.price}}</view>
+        </view>
+        <!-- <view class="{{(index+1)%3==0 && orderList.length!=index+1?'yesline':''}}"></view>       -->
+      </view>
+    </view>
+
+    <!-- <view class="not" wx:if="{{orderList.length == 0}}">
+        <view class="not-big">
+          <view>
+            <image class="item-img" src="/images/notorder.png"></image>
+          </view>
+          <view>
+            <text class="item-text">订单都被抢光啦~/text>
+          </view>
+          <view class='butt' bindtap='toPutOrder'>去发一单</view>
+        </view>
+      </view> -->
+
+    <view id="end" wx:if="{{orderList.length != 0}}">
+      <text>--·\tEND\t·--</text>
+    </view>
+  </view>
+</view>
+
+<view hidden="{{showtab!==5}}" class="{{tabbarFix?'marg_top':'marg_not'}}">
+  <view class="orderList">
+    <view id="yes">
+      <view class="inner-big">
+
+        <view class="item">
+          <image style="width:226rpx;height:342rpx;border-radius:10rpx; display: block;" mode="aspectFill" src="http://apppic.zomin.cn/FnwHOErgFp0SpPx59dGsxRH12qGZ"></image>
+        </view>
+
+        <view class="item" wx:for="{{orderList}}" wx:key="id" wx:for-item="order" wx:for-index="index" bindtap="navigatDetail" data-url="../details/details?business_id={{order.business_id}}">
+          <view class='item-top'>
+            <image src="{{order.images}}" class="pic" mode="aspectFill"></image>
+            <view class="distance">{{order.distance}}</view>
+            <view wx:if="{{order.helper_users_id != 0}}" class="tag">{{order.helper_users_name}}</view>
+          </view>
+          <view class='item-title'>{{order.title}}</view>
+          <view class='item-price'>￥{{order.price}}</view>
+        </view>
+        <!-- <view class="{{(index+1)%3==0 && orderList.length!=index+1?'yesline':''}}"></view>       -->
+      </view>
+    </view>
+
+    <!-- <view class="not" wx:if="{{orderList.length == 0}}">
+        <view class="not-big">
+          <view>
+            <image class="item-img" src="/images/notorder.png"></image>
+          </view>
+          <view>
+            <text class="item-text">订单都被抢光啦~</text>
+          </view>
+          <view class='butt' bindtap='toPutOrder'>去发一单</view>
+        </view>
+      </view> -->
+
+    <view id="end" wx:if="{{orderList.length != 0}}">
+      <text>--·\tEND\t·--</text>
+    </view>
+  </view>
+</view>
+
+<view hidden="{{showtab!==6}}" class="{{tabbarFix?'marg_top':'marg_not'}}">
+  <view class="orderList">
+    <view id="yes">
+      <view class="inner-big">
+
+        <view class="item">
+          <image style="width:226rpx;height:342rpx;border-radius:10rpx; display: block;" mode="aspectFill" src="http://apppic.zomin.cn/FpN_Cbjo0FL2f_cAIMNQQ1dBusq-"></image>
+        </view>
+
+        <view class="item" wx:for="{{orderList}}" wx:key="id" wx:for-item="order" wx:for-index="index" bindtap="navigatDetail" data-url="../details/details?business_id={{order.business_id}}">
+          <view class='item-top'>
+            <image src="{{order.images}}" class="pic" mode="aspectFill"></image>
+            <view class="distance">{{order.distance}}</view>
+            <view wx:if="{{order.helper_users_id != 0}}" class="tag">{{order.helper_users_name}}</view>
+          </view>
+          <view class='item-title'>{{order.title}}</view>
+          <view class='item-price'>￥{{order.price}}</view>
+        </view>
+        <!-- <view class="{{(index+1)%3==0 && orderList.length!=index+1?'yesline':''}}"></view>       -->
+      </view>
+    </view>
+
+    <!-- <view class="not" wx:if="{{orderList.length == 0}}">
+        <view class="not-big">
+          <view>
+            <image class="item-img" src="/images/notorder.png"></image>
+          </view>
+          <view>
+            <text class="item-text">订单都被抢光啦~</text>
+          </view>
+          <view class='butt' bindtap='toPutOrder'>去发一单</view>
+        </view>
+      </view> -->
+
+    <view id="end" wx:if="{{orderList.length != 0}}">
+      <text>--·\tEND\t·--</text>
+    </view>
+  </view>
+</view>
+
+<view hidden="{{showtab!==7}}" class="{{tabbarFix?'marg_top':'marg_not'}}">
+  <view class="orderList">
+    <view id="yes">
+      <view class="inner-big">
+
+        <view class="item">
+          <image style="width:226rpx;height:342rpx;border-radius:10rpx; display: block;" mode="aspectFill" src="http://apppic.zomin.cn/FnE_bFFh2zRENnJH4ez6h3CR7ZXh"></image>
+        </view>
+
+        <view class="item" wx:for="{{orderList}}" wx:key="id" wx:for-item="order" wx:for-index="index" bindtap="navigatDetail" data-url="../details/details?business_id={{order.business_id}}">
+          <view class='item-top'>
+            <image src="{{order.images}}" class="pic" mode="aspectFill"></image>
+            <view class="distance">{{order.distance}}</view>
+            <view wx:if="{{order.helper_users_id != 0}}" class="tag">{{order.helper_users_name}}</view>
+          </view>
+          <view class='item-title'>{{order.title}}</view>
+          <view class='item-price'>￥{{order.price}}</view>
+        </view>
+        <!-- <view class="{{(index+1)%3==0 && orderList.length!=index+1?'yesline':''}}"></view>       -->
+      </view>
+    </view>
+
+    <!-- <view class="not" wx:if="{{orderList.length == 0}}">
+        <view class="not-big">
+          <view>
+            <image class="item-img" src="/images/notorder.png"></image>
+          </view>
+          <view>
+            <text class="item-text">订单都被抢光啦~</text>
+          </view>
+          <view class='butt' bindtap='toPutOrder'>去发一单</view>
+        </view>
+      </view> -->
+
+    <view id="end" wx:if="{{orderList.length != 0}}">
+      <text>--·\tEND\t·--</text>
+    </view>
+  </view>
+</view>
+
+<view hidden="{{showtab!==8}}" class="{{tabbarFix?'marg_top':'marg_not'}}">
+  <view class="orderList">
+    <view id="yes">
+      <view class="inner-big">
+
+        <view class="item">
+          <image style="width:226rpx;height:342rpx;border-radius:10rpx; display: block;" mode="aspectFill" src="http://apppic.zomin.cn/Fl64FEoJQOq8oUN0ng4ictjStEje"></image>
+        </view>
+
+        <view class="item" wx:for="{{orderList}}" wx:key="id" wx:for-item="order" wx:for-index="index" bindtap="navigatDetail" data-url="../details/details?business_id={{order.business_id}}">
+          <view class='item-top'>
+            <image src="{{order.images}}" class="pic" mode="aspectFill"></image>
+            <view class="distance">{{order.distance}}</view>
+            <view wx:if="{{order.helper_users_id != 0}}" class="tag">{{order.helper_users_name}}</view>
+          </view>
+          <view class='item-title'>{{order.title}}</view>
+          <view class='item-price'>￥{{order.price}}</view>
+        </view>
+        <!-- <view class="{{(index+1)%3==0 && orderList.length!=index+1?'yesline':''}}"></view>       -->
+      </view>
+    </view>
+
+    <!-- <view class="not" wx:if="{{orderList.length == 0}}">
+        <view class="not-big">
+          <view>
+            <image class="item-img" src="/images/notorder.png"></image>
+          </view>
+          <view>
+            <text class="item-text">订单都被抢光啦~</text>
+          </view>
+          <view class='butt' bindtap='toPutOrder'>去发一单</view>
+        </view>
+      </view> -->
+
+    <view id="end" wx:if="{{orderList.length != 0}}">
+      <text>--·\tEND\t·--</text>
+    </view>
+  </view>
+</view>
+
+<view hidden="{{showtab!==9}}" class="{{tabbarFix?'marg_top':'marg_not'}}">
+  <view class="orderList">
+    <view id="yes">
+      <view class="inner-big">
+
+        <view class="item">
+          <image style="width:226rpx;height:342rpx;border-radius:10rpx; display: block;" mode="aspectFill" src="http://apppic.zomin.cn/Fk-0r7v8_KD987W8bpGEhe6xsbk0"></image>
+        </view>
+
+        <view class="item" wx:for="{{orderList}}" wx:key="id" wx:for-item="order" wx:for-index="index" bindtap="navigatDetail" data-url="../details/details?business_id={{order.business_id}}">
+          <view class='item-top'>
+            <image src="{{order.images}}" class="pic" mode="aspectFill"></image>
+            <view class="distance">{{order.distance}}</view>
+            <view wx:if="{{order.helper_users_id != 0}}" class="tag">{{order.helper_users_name}}</view>
+          </view>
+          <view class='item-title'>{{order.title}}</view>
+          <view class='item-price'>￥{{order.price}}</view>
+        </view>
+        <!-- <view class="{{(index+1)%3==0 && orderList.length!=index+1?'yesline':''}}"></view>       -->
+      </view>
+    </view>
+
+    <!-- <view class="not" wx:if="{{orderList.length == 0}}">
+        <view class="not-big">
+          <view>
+            <image class="item-img" src="/images/notorder.png"></image>
+          </view>
+          <view>
+            <text class="item-text">订单都被抢光啦~</text>
+          </view>
+          <view class='butt' bindtap='toPutOrder'>去发一单</view>
+        </view>
+      </view> -->
+
+    <view id="end" wx:if="{{orderList.length != 0}}">
+      <text>--·\tEND\t·--</text>
+    </view>
+  </view>
+</view>
+
+<!-- 弹窗 -->
+<view class="dialog" wx:if="{{showDialog}}">
+  <!-- 遮罩层view-->
+  <view class="mask {{showDialog?'mask2':''}}" catchtouchmove="preventTouchMove"></view>
+  <view class="container">
+    <view class="prop">
+      <image src="/images/icon1.png" catchtap='close' catchtouchmove='preventTouchMove'></image>
+      <scroll-view class='cont' scroll-y="{{true}}" catchtouchmove='preventTouchMove'>欢迎使用小程序</scroll-view>
+    </view>
+  </view>
+</view>
