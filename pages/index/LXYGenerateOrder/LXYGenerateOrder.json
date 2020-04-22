@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "发布需求",
-  "enablePullDownRefresh": false,
-  "backgroundColor": "#f0f0f0",
-  "usingComponents": {
-    "multi": "../../components/multi/multi"
-  }
-}

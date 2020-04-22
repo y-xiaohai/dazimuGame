@@ -1,5 +1,0 @@
-<image src="/images/success.png"></image>
-<view class="cos">申请成功</view>
-<view class="hint">正在处理中……预计将在2小时后到账</view>
-<navigator class="public wallet" open-type="redirect" url="../myWallet/myWallet" hover-class='none'>我的钱包</navigator>
-<!-- <navigator class="public back" url="../cashOut/cashOut" hover-class='none'>返回</navigator> -->

@@ -1,1 +1,0 @@
-<view class="fenlei" wx:key="id" wx:for="{{classList}}" wx:for-item="classList" wx:for-index="{{index}}" data-category="{{classList.class_name}}" data-num="{{classList.class_id}}" bindtap='returnClass'>{{classList.class_name}}</view>

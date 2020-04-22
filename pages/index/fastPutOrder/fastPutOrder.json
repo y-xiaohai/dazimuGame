@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "发布需求",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "multi": "../../components/multi/multi"
-  }
-}
