@@ -1,0 +1,82 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="id=edge">
+<title>字母练习</title>
+<style type="text/css">
+	body{
+		width: 100vw;
+		height: 100vh;
+		margin: 0;
+		padding: 0;
+		background: radial-gradient(circle,#444,#000 50%);/* 颜色渐变 */
+		
+		/* display： flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center; */
+	}
+	#char{
+		font-size:400px; 
+		color: yellow;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		
+		text-shadow: #888 0px 0px 50px;/* 給字添加阴影 */
+	}
+	#result{
+		position: absolute;
+		width: 100%;
+		text-align: center;
+		color: #888;
+		bottom: 100px;
+	}
+</style>
+</head>
+<body>
+	<div id="char">A</div>
+	<div id="result">请按照我们屏幕上的字母按下按键</div>
+	
+	<script type="text/javascript">
+		var charDOM = document.getElementById("char");
+		var resultDOM = document.getElementById("result");
+		var chars;
+		var correctNum = 0;//正确数
+		var errorNum = 0;//错误数
+		function changeChar(){
+		//字母随机，数字的随机65~90即A~Z
+			var code = Math.floor(Math.random()*26+65);
+			chars = String.fromCharCode(code);
+			
+			var letters = "0123456789ABCDEF";
+			var color = "#";
+			for(var i= 0;i<6;i++){
+				color += letters[Math.floor(Math.random()*16)];
+			}
+			charDOM.style.color = color;
+			charDOM.innerText = chars;
+		}
+		changeChar();
+		document.addEventListener("keydown", function(e){
+			//物理按键
+			console.log(e.code);
+			if(e.code === "Key" + chars){
+				//再次更新我们的字母
+				correctNum++;
+				changeChar();
+			}else{
+				errorNum++;
+			}
+			
+			var percent = (correctNum/(correctNum + errorNum)*100).toFixed(2) + "%";
+			resultDOM.innerHTML = "正确的个数: " + correctNum + " 错误的个数："+ errorNum + " 正确率：" + percent;
+			//输入法的字符
+			console.log(e.key);
+		})
+	</script>
+</body>
+</html>
